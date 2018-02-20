@@ -27,7 +27,7 @@ public class Main {
         //getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
         //findEvenAndOddNumbers(list); //задание 6.1
         //findMinMax(list); //задание 6.2
-
+        //divisionOfNnumbers(list); //задание 6.3
     }
 
     private static void welcomeUser() {
@@ -129,4 +129,21 @@ public class Main {
         System.out.println("Наибольшее число = " + listOfNumbers.get(listOfNumbers.size()-1));
 
     }
+
+    private static void  divisionOfNnumbers(ArrayList<Integer> listOfNumbers) {
+
+        System.out.print("Числа, которые делятся на 3 или на 9: ");
+
+        for (Integer listOfNumber : listOfNumbers) {
+
+            if (listOfNumber%9 == 0 | listOfNumber%3 == 0) System.out.print(listOfNumber + " ");
+
+        }
+
+    }
+
+
+
+
+
 }
