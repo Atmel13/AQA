@@ -11,15 +11,7 @@ public class Main {
         int howManyNumbersToCount = 5;
         ArrayList<Integer> list = new ArrayList();
 
-        //welcomeUser(); //задание 1
-        //displayNameInReverseOrder("Евгений"); //задание 2
-        //displayRandomNumbers(25); //задание 3
-        //isEnteredStringEqualTo("Pass4W0rd"); //задание 4
-        //getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
-
-        //задание 6 - получение массива чисел с клавитуры
         System.out.println("Введите каждое число с новой строки");
-
 
         for (int i = 0; i < howManyNumbersToCount; i++) {
             Scanner scan = new Scanner(System.in);
@@ -28,9 +20,13 @@ public class Main {
             list.add(number);
         }
 
-        //findEvenAndOddNumbers(list); //задание 6
-        //findMinMax(list);
-
+        //welcomeUser(); //задание 1
+        //displayNameInReverseOrder("Евгений"); //задание 2
+        //displayRandomNumbers(25); //задание 3
+        //isEnteredStringEqualTo("Pass4W0rd"); //задание 4
+        //getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
+        //findEvenAndOddNumbers(list); //задание 6.1
+        //findMinMax(list); //задание 6.2
 
     }
 
