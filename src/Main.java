@@ -1,18 +1,36 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        int howManyNumbersToCount = 5;
+        ArrayList<Integer> list = new ArrayList();
+
         //welcomeUser(); //задание 1
         //displayNameInReverseOrder("Евгений"); //задание 2
         //displayRandomNumbers(25); //задание 3
         //isEnteredStringEqualTo("Pass4W0rd"); //задание 4
-        //getResultsOfEnteredNumbers(5); //задание 5
-        operationsWithEnteredNumbers(5); //задание 6
+        //getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
+
+        //задание 6 - получение массива чисел с клавитуры
+        System.out.println("Введите каждое число с новой строки");
+
+
+        for (int i = 0; i < howManyNumbersToCount; i++) {
+            Scanner scan = new Scanner(System.in);
+            String enteredText = scan.next();
+            int number = Integer.parseInt(enteredText);
+            list.add(number);
+        }
+
+        //findEvenAndOddNumbers(list); //задание 6
+        //findMinMax(list);
+
 
     }
 
@@ -53,9 +71,6 @@ public class Main {
         }
 
 
-
-
-
     }
 
     private static void isEnteredStringEqualTo(String password) {
@@ -83,7 +98,7 @@ public class Main {
             String enteredText = scan.next();
             int number = Integer.parseInt(enteredText);
             resultSum = resultSum + number;
-            multiplicationNumbers = multiplicationNumbers*number;
+            multiplicationNumbers = multiplicationNumbers * number;
 
         }
 
@@ -91,34 +106,31 @@ public class Main {
         System.out.println("Произведение введенных чисел = " + multiplicationNumbers);
     }
 
-    private static void operationsWithEnteredNumbers(int howManyNumbersToCount) {
-
-        System.out.println("Введите каждое число с новой строки");
-
-        ArrayList<Integer> list = new ArrayList();
-
-        for (int i = 0; i < howManyNumbersToCount; i++) {
-
-            Scanner scan = new Scanner(System.in);
-            String enteredText = scan.next();
-            int number = Integer.parseInt(enteredText);
-            list.add(number);
-        }
+    private static void  findEvenAndOddNumbers(ArrayList<Integer> listOfNumbers) {
 
         System.out.print("Четные числа: ");
 
-        for (int filledNumber : list) {
+        for (int filledNumber : listOfNumbers) {
 
-            if (filledNumber%2 == 0) System.out.print(filledNumber + " ");
+            if (filledNumber % 2 == 0) System.out.print(filledNumber + " ");
 
         }
 
         System.out.print("\n" + "Нечетные числа: ");
 
-        for (int filledNumber : list) {
+        for (int filledNumber : listOfNumbers) {
 
-            if (filledNumber%2 != 0) System.out.print(filledNumber + " ");
+            if (filledNumber % 2 != 0) System.out.print(filledNumber + " ");
 
         }
+    }
+
+    private static void  findMinMax(ArrayList<Integer> listOfNumbers) {
+
+        Collections.sort(listOfNumbers);
+
+        System.out.println("Наименьшее число = " + listOfNumbers.get(0));
+        System.out.println("Наибольшее число = " + listOfNumbers.get(listOfNumbers.size()-1));
+
     }
 }
