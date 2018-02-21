@@ -11,7 +11,7 @@ public class Main {
         int howManyNumbersToCount = 5;
         ArrayList<Integer> list = new ArrayList();
 
-        System.out.println("Введите каждое число с новой строки");
+        System.out.println("Введите " + howManyNumbersToCount + " чисел. Каждое число с новой строки");
 
         for (int i = 0; i < howManyNumbersToCount; i++) {
             Scanner scan = new Scanner(System.in);
@@ -27,7 +27,10 @@ public class Main {
         //getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
         //findEvenAndOddNumbers(list); //задание 6.1
         //findMinMax(list); //задание 6.2
-        //divisionOfNnumbers(list); //задание 6.3
+        //divisionOfNnumbers39(list); //задание 6.3
+        //divisionOfNnumbers5and7(list); //задание 6.4
+        notContainSameNumbers(list); //задание 6.5
+
     }
 
     private static void welcomeUser() {
@@ -130,7 +133,7 @@ public class Main {
 
     }
 
-    private static void  divisionOfNnumbers(ArrayList<Integer> listOfNumbers) {
+    private static void  divisionOfNnumbers39 (ArrayList<Integer> listOfNumbers) {
 
         System.out.print("Числа, которые делятся на 3 или на 9: ");
 
@@ -139,6 +142,28 @@ public class Main {
             if (listOfNumber%9 == 0 | listOfNumber%3 == 0) System.out.print(listOfNumber + " ");
 
         }
+
+    }
+
+    private static void divisionOfNnumbers5and7(ArrayList<Integer> list) {
+
+        System.out.print("Числа, которые делятся на 5 и на 7: ");
+
+        for (Integer listOfNumber : list) {
+
+            if (listOfNumber%5 == 0 & listOfNumber%7 == 0) System.out.print(listOfNumber + " ");
+
+        }
+
+    }
+
+    private static void notContainSameNumbers (ArrayList<Integer> list) {
+
+
+
+
+
+
 
     }
 
