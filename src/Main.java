@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -31,9 +28,11 @@ public class Main {
         findMinMax(list); //задание 6.2
         divisionOfNumbers39(list); //задание 6.3
         divisionOfNumbers5and7(list); //задание 6.4
+        noEqualNumbers(list);
         luckyNumbers(list); //задание 6.6
 
     }
+
 
     private static void welcomeUser() {
 
@@ -174,6 +173,33 @@ public class Main {
 
     }
 
+    private static void noEqualNumbers(ArrayList<Integer> list) {
+
+        for (int myNum : list) {
+
+            String numContainer = Integer.toString(myNum);
+            int[] myNumbers = new int[numContainer.length()];
+            HashSet myNumbersSet = new HashSet();
+
+            if (myNumbers.length == 3) {
+
+                for (int i = 0; i < myNumbers.length; i++) {
+                    myNumbers[i] = Integer.parseInt(String.valueOf(numContainer.charAt(i)));
+                    myNumbersSet.add(myNumbers[i]);
+                }
+                
+            }
+
+            if (myNumbers.length == myNumbersSet.size())
+                System.out.println("Это трехзначное число состоит из уникальных цифр. Число = " + myNum);
+
+
+        }
+
+        System.out.println("Пункт 6.5 выполнен.");
+
+    }
+
     private static void luckyNumbers(ArrayList<Integer> list) {
 
         for (int myNum : list) {
@@ -218,4 +244,6 @@ public class Main {
 
         System.out.println("Пункт 6.6 выполнен.");
     }
+
+
 }
