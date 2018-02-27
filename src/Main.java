@@ -1,6 +1,4 @@
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -29,7 +27,7 @@ public class Main {
         //findMinMax(list); //задание 6.2
         //divisionOfNnumbers39(list); //задание 6.3
         //divisionOfNnumbers5and7(list); //задание 6.4
-        notContainSameNumbers(list); //задание 6.5
+        luckyNumbers(list); //задание 6.6
 
     }
 
@@ -105,7 +103,7 @@ public class Main {
         System.out.println("Произведение введенных чисел = " + multiplicationNumbers);
     }
 
-    private static void  findEvenAndOddNumbers(ArrayList<Integer> listOfNumbers) {
+    private static void findEvenAndOddNumbers(ArrayList<Integer> listOfNumbers) {
 
         System.out.print("Четные числа: ");
 
@@ -124,22 +122,22 @@ public class Main {
         }
     }
 
-    private static void  findMinMax(ArrayList<Integer> listOfNumbers) {
+    private static void findMinMax(ArrayList<Integer> listOfNumbers) {
 
         Collections.sort(listOfNumbers);
 
         System.out.println("Наименьшее число = " + listOfNumbers.get(0));
-        System.out.println("Наибольшее число = " + listOfNumbers.get(listOfNumbers.size()-1));
+        System.out.println("Наибольшее число = " + listOfNumbers.get(listOfNumbers.size() - 1));
 
     }
 
-    private static void  divisionOfNnumbers39 (ArrayList<Integer> listOfNumbers) {
+    private static void divisionOfNnumbers39(ArrayList<Integer> listOfNumbers) {
 
         System.out.print("Числа, которые делятся на 3 или на 9: ");
 
         for (Integer listOfNumber : listOfNumbers) {
 
-            if (listOfNumber%9 == 0 | listOfNumber%3 == 0) System.out.print(listOfNumber + " ");
+            if (listOfNumber % 9 == 0 | listOfNumber % 3 == 0) System.out.print(listOfNumber + " ");
 
         }
 
@@ -151,24 +149,42 @@ public class Main {
 
         for (Integer listOfNumber : list) {
 
-            if (listOfNumber%5 == 0 & listOfNumber%7 == 0) System.out.print(listOfNumber + " ");
+            if (listOfNumber % 5 == 0 & listOfNumber % 7 == 0) System.out.print(listOfNumber + " ");
 
         }
 
     }
 
-    private static void notContainSameNumbers (ArrayList<Integer> list) {
+    private static void luckyNumbers(ArrayList<Integer> list) {
 
+        int part1 = 0;
+        int part2 = 0;
 
+        for (int myNum : list) {
 
+            char[] numContainer = String.valueOf(myNum).toCharArray();
 
+            if (numContainer.length % 2 != 0) {
 
+                System.out.println("Введеное число содержит нечетное кол-во цифр. " +
+                        "Не подходит для дальнейшего расчета счастливого числа");
+            } else {
+
+                for (int i = 0; i < numContainer.length / 2; i++) {
+
+                    part1 += (int) numContainer[i];
+                }
+
+                for (int i = numContainer.length / 2; i < numContainer.length; i++) {
+
+                    part2 += (int) numContainer[i];
+                }
+            }
+
+        }
 
 
     }
-
-
-
 
 
 }
