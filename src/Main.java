@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -25,8 +26,8 @@ public class Main {
         //getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
         //findEvenAndOddNumbers(list); //задание 6.1
         //findMinMax(list); //задание 6.2
-        //divisionOfNnumbers39(list); //задание 6.3
-        //divisionOfNnumbers5and7(list); //задание 6.4
+        //divisionOfNumbers39(list); //задание 6.3
+        //divisionOfNumbers5and7(list); //задание 6.4
         luckyNumbers(list); //задание 6.6
 
     }
@@ -131,7 +132,7 @@ public class Main {
 
     }
 
-    private static void divisionOfNnumbers39(ArrayList<Integer> listOfNumbers) {
+    private static void divisionOfNumbers39(ArrayList<Integer> listOfNumbers) {
 
         System.out.print("Числа, которые делятся на 3 или на 9: ");
 
@@ -143,7 +144,7 @@ public class Main {
 
     }
 
-    private static void divisionOfNnumbers5and7(ArrayList<Integer> list) {
+    private static void divisionOfNumbers5and7(ArrayList<Integer> list) {
 
         System.out.print("Числа, которые делятся на 5 и на 7: ");
 
@@ -157,29 +158,45 @@ public class Main {
 
     private static void luckyNumbers(ArrayList<Integer> list) {
 
-        int part1 = 0;
-        int part2 = 0;
-
         for (int myNum : list) {
 
-            char[] numContainer = String.valueOf(myNum).toCharArray();
+            String numContainer = Integer.toString(myNum);
+            int[] myNumbers = new int[numContainer.length()];
 
-            if (numContainer.length % 2 != 0) {
+            for (int i = 0; i < myNumbers.length; i++) {
+                myNumbers[i] = Integer.parseInt(String.valueOf(numContainer.charAt(i)));
+            }
 
-                System.out.println("Введеное число содержит нечетное кол-во цифр. " +
+            //System.out.println("Длина массива = " + myNumbers.length);
+            //System.out.println("Состав массива = " + Arrays.toString(myNumbers));
+
+            if (myNumbers.length % 2 != 0) {
+
+                System.out.println("Введеное число = " + myNum + ", содержит нечетное кол-во цифр. " +
                         "Не подходит для дальнейшего расчета счастливого числа");
             } else {
 
-                for (int i = 0; i < numContainer.length / 2; i++) {
+                int part1 = 0;
+                int part2 = 0;
 
-                    part1 += (int) numContainer[i];
+                for (int i = 0; i < myNumbers.length / 2; i++) {
+
+                    part1 += myNumbers[i];
+
+                    //System.out.println("myNumbers = " + myNumbers[i]);
                 }
 
-                for (int i = numContainer.length / 2; i < numContainer.length; i++) {
+                for (int i = myNumbers.length / 2; i < myNumbers.length; i++) {
 
-                    part2 += (int) numContainer[i];
+                    part2 += myNumbers[i];
+
+                    //System.out.println("part2 = " + part2);
                 }
+
+                if (part1 == part2) System.out.println("Найдено счастливое число = " + myNum);
+                else System.out.println("Число " + myNum + " не является счастливым.");
             }
+
 
         }
 
