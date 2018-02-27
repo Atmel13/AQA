@@ -8,8 +8,15 @@ public class Main {
     public static void main(String[] args) {
 
         int howManyNumbersToCount = 5;
-        ArrayList<Integer> list = new ArrayList();
 
+        welcomeUser(); //задание 1
+        displayNameInReverseOrder("Евгений"); //задание 2
+        displayRandomNumbers(25); //задание 3
+        isEnteredStringEqualTo("Pass4W0rd"); //задание 4
+        getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
+
+        //Для 6-го задания
+        ArrayList<Integer> list = new ArrayList();
         System.out.println("Введите " + howManyNumbersToCount + " чисел. Каждое число с новой строки");
 
         for (int i = 0; i < howManyNumbersToCount; i++) {
@@ -19,15 +26,11 @@ public class Main {
             list.add(number);
         }
 
-        //welcomeUser(); //задание 1
-        //displayNameInReverseOrder("Евгений"); //задание 2
-        //displayRandomNumbers(25); //задание 3
-        //isEnteredStringEqualTo("Pass4W0rd"); //задание 4
-        //getResultsOfEnteredNumbers(howManyNumbersToCount); //задание 5
-        //findEvenAndOddNumbers(list); //задание 6.1
-        //findMinMax(list); //задание 6.2
-        //divisionOfNumbers39(list); //задание 6.3
-        //divisionOfNumbers5and7(list); //задание 6.4
+
+        findEvenAndOddNumbers(list); //задание 6.1
+        findMinMax(list); //задание 6.2
+        divisionOfNumbers39(list); //задание 6.3
+        divisionOfNumbers5and7(list); //задание 6.4
         luckyNumbers(list); //задание 6.6
 
     }
@@ -68,6 +71,7 @@ public class Main {
             if (Math.random() < 0.5) System.out.println(""); //возвращает 1 или 0 и сравнивает с 0.5
         }
 
+        System.out.println("Пункт 3 выполнен.");
 
     }
 
@@ -80,6 +84,8 @@ public class Main {
 
         if (password.equals(enteredPassword)) System.out.println("Пароли совпадают!");
         else System.out.println("Пароли НЕ совпадают!");
+
+        System.out.println("Пункт 4 выполнен.");
 
     }
 
@@ -102,6 +108,9 @@ public class Main {
 
         System.out.println("Сумма введенных чисел = " + resultSum);
         System.out.println("Произведение введенных чисел = " + multiplicationNumbers);
+
+        System.out.println("Пункт 5 выполнен.");
+
     }
 
     private static void findEvenAndOddNumbers(ArrayList<Integer> listOfNumbers) {
@@ -121,6 +130,9 @@ public class Main {
             if (filledNumber % 2 != 0) System.out.print(filledNumber + " ");
 
         }
+
+        System.out.println("\n" + "Пункт 6.1 выполнен.");
+
     }
 
     private static void findMinMax(ArrayList<Integer> listOfNumbers) {
@@ -129,6 +141,8 @@ public class Main {
 
         System.out.println("Наименьшее число = " + listOfNumbers.get(0));
         System.out.println("Наибольшее число = " + listOfNumbers.get(listOfNumbers.size() - 1));
+
+        System.out.println("Пункт 6.2 выполнен.");
 
     }
 
@@ -142,6 +156,8 @@ public class Main {
 
         }
 
+        System.out.println("\n" + "Пункт 6.3 выполнен.");
+
     }
 
     private static void divisionOfNumbers5and7(ArrayList<Integer> list) {
@@ -153,6 +169,8 @@ public class Main {
             if (listOfNumber % 5 == 0 & listOfNumber % 7 == 0) System.out.print(listOfNumber + " ");
 
         }
+
+        System.out.println("\n" + "Пункт 6.4 выполнен.");
 
     }
 
@@ -196,12 +214,8 @@ public class Main {
                 if (part1 == part2) System.out.println("Найдено счастливое число = " + myNum);
                 else System.out.println("Число " + myNum + " не является счастливым.");
             }
-
-
         }
 
-
+        System.out.println("Пункт 6.6 выполнен.");
     }
-
-
 }
